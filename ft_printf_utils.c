@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:56:13 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/23 16:21:35 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/23 17:07:55 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,16 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putnbr_fd(n / 10, fd);
 			ft_putchar_fd((n % 10) + 48, fd);
 		}
+	}
+}
+
+void	ft_put_unsigned_nbr_fd(unsigned int n, int fd)
+{
+	if (n < 10)
+		ft_putchar_fd((n + 48), fd);
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd((n % 10) + 48, fd);
 	}
 }
