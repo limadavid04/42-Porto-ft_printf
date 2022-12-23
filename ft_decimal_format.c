@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_decimal_format.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 13:08:18 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/21 17:52:50 by dlima            ###   ########.fr       */
+/*   Created: 2022/12/21 17:42:57 by dlima             #+#    #+#             */
+/*   Updated: 2022/12/21 17:57:28 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	main(void)
+int	ft_decimal_format(int num)
 {
-	char	*str;
+	int	nbr_digits;
 
-	str = "david";
-	printf("ft_printf = %d\n", ft_printf("%p\n", str));
-	printf("printf = %d\n", printf("%p\n", str));
-
-	ft_printf("%d\n", 153);
-	printf("%d", 153);
+	nbr_digits = 1;
+	while (num)
+	{
+		num /= 10;
+		nbr_digits++;
+	}
+	ft_putnbr_fd(num, 1);
+	return (nbr_digits);
 }
+//verificar se ta a retornar a mm merda que o printf

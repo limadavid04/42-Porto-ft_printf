@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima <dlima@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:48:54 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/20 17:46:19 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/21 17:46:11 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int str_formater(va_list args, char c)
+static int	str_formater(va_list args, char c)
 {
-	int char_num;
+	int	char_num;
 
 	if (c == 'c')
 		char_num = ft_char_format(va_arg(args, int));
@@ -22,25 +22,25 @@ static int str_formater(va_list args, char c)
 		char_num = ft_string_format(va_arg(args, char *));
 	else if (c == 'p')
 		char_num = ft_pointer_format(va_arg(args, unsigned long long));
+	else if (c == 'd')
+		char_num = ft_decimal_format(va_arg(args, int));
 	return (char_num);
 }
-int ft_printf(const char *str, ...)
+
+int	ft_printf(const char *str, ...)
 {
-	int char_num;
-	va_list args;
-	int i;
+	int		char_num;
+	va_list	args;
+	int		i;
 
 	i = 0;
 	char_num = 0;
 	va_start(args, str);
-	// get %-signs and for each
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			 //o que a formater retornar;
 			char_num += str_formater(args, str[i + 1]);
-			//o que faco se asseguir do % a string acabar?
 			i++;
 		}
 		else
