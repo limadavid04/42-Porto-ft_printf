@@ -6,19 +6,21 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 17:42:57 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/23 12:37:37 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/23 16:26:00 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_decimal_format(long num)
+int	ft_decimal_format(int num)
 {
 	int	nbr_digits;
 
 	nbr_digits = 0;
 	if (num < 0)
 		nbr_digits++;
+	if (num == 0)
+		nbr_digits = 1;
 	ft_putnbr_fd(num, 1);
 	while (num)
 	{

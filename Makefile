@@ -8,10 +8,10 @@ ft_pointer_format ft_decimal_format ft_printf_utils main
 
 all: $(NAME)
 
-# $(NAME): $(FILES:=.o)
-# 	ar -rc $(NAME) $(FILES:=.o)
-$(NAME) : $(FILES:=.o)
-	$(CC) -g $(CFLAGS) $(FILES:=.o)
+$(NAME): $(FILES:=.o)
+	ar -rc $(NAME) $(FILES:=.o)
+# $(NAME) : $(FILES:=.o)
+# 	$(CC) -g $(CFLAGS) $(FILES:=.o)
 clean:
 	rm -f $(FILES:=.o)
 
