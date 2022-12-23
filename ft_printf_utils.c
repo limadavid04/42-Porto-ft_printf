@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:56:13 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/21 17:40:07 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/23 12:33:11 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_putchar_fd(char c, int fd)
 }
 
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(long n, int fd)
 {
 	if (n == -2147483648)
 	{

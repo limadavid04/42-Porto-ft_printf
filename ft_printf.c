@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:48:54 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/21 17:46:11 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/23 12:32:20 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	str_formater(va_list args, char c)
 	else if (c == 'p')
 		char_num = ft_pointer_format(va_arg(args, unsigned long long));
 	else if (c == 'd')
-		char_num = ft_decimal_format(va_arg(args, int));
+		char_num = ft_decimal_format(va_arg(args, long));
 	return (char_num);
 }
 
