@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hexadecimal_format.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dlima <dlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 18:26:06 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/27 14:26:54 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/28 10:31:28 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	hexa(long long int num, char c)
+static void	hexa(unsigned long num, char c)
 {
 	char	*chars;
 
@@ -32,7 +32,7 @@ static void	hexa(long long int num, char c)
 	}
 }
 
-int	ft_hexadecimal_format(long long int num, char c)
+int	ft_hexadecimal_format(unsigned long num, char c)
 {
 	int	len;
 

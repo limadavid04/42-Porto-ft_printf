@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dlima <dlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:50:06 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/27 14:32:29 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/28 10:22:48 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int		ft_string_format(char *str);
 int		ft_pointer_format(unsigned long long num);
 int		ft_decimal_format(int num);
 int		ft_unsigned_format(unsigned int num);
-int		ft_hexadecimal_format(long long int num, char c);
+int		ft_hexadecimal_format(unsigned long num, char c);
 size_t	ft_strlen(const char *s);
-int		ft_hexanumlen(long long int num);
+int		ft_hexanumlen(unsigned long num);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_put_unsigned_nbr_fd(unsigned int n, int fd);

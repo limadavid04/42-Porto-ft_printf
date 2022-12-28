@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dlima <dlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:56:13 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/27 14:32:17 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/28 11:38:34 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_hexanumlen(long long int num)
+int	ft_hexanumlen(unsigned long num)
 {
 	int	len;
 
@@ -39,7 +39,6 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
-
 
 void	ft_putnbr_fd(int n, int fd)
 {

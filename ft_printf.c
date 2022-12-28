@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dlima <dlima@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:48:54 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/27 10:52:50 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/28 10:30:55 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	str_formater(va_list args, char c)
 	else if (c == 'u')
 		char_num = ft_unsigned_format(va_arg(args, unsigned int));
 	else if (c == 'x' || c == 'X')
-		char_num = ft_hexadecimal_format(va_arg(args, long long int), c);
+		char_num = ft_hexadecimal_format(va_arg(args, unsigned int), c);
 	else if (c == '%')
 	{
 		write(1, "%", 1);
