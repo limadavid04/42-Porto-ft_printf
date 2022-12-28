@@ -1,41 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pointer_format.c                                :+:      :+:    :+:   */
+/*   ft_hexadecimal_format.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 15:29:49 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/26 14:22:06 by dlima            ###   ########.fr       */
+/*   Created: 2022/12/23 18:26:06 by dlima             #+#    #+#             */
+/*   Updated: 2022/12/27 14:26:54 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	hexa_ptr(unsigned long long num)
+static void	hexa(long long int num, char c)
 {
 	char	*chars;
 
 	chars = "0123456789abcdef";
-	if (num < 16)
+	if (c == 'X')
+		chars = "0123456789ABCDEF";
+	if (num < 0)
 	{
-		write(1, &chars[num], 1);
+		num = 4294967295 - (num * (-1)) + 1;
 	}
+	if (num < 16)
+		write(1, &chars[num], 1);
 	else
 	{
-		hexa_ptr(num / 16);
-		hexa_ptr(num % 16);
+		hexa(num / 16, c);
+		hexa(num % 16, c);
 	}
 }
 
-int	ft_pointer_format(unsigned long long num)
+int	ft_hexadecimal_format(long long int num, char c)
 {
+	int	len;
+
 	if (num == 0)
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		write(1, "0", 1);
+		return (1);
 	}
-	write(1, "0x", 2);
-	hexa_ptr(num);
-	return (ft_hexanumlen(num) + 2);
+	hexa(num, c);
+	if (num < 0)
+		num *= -1;
+	len = ft_hexanumlen(num);
+	return (len);
 }

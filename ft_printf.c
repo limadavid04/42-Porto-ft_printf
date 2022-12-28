@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 10:48:54 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/23 16:57:56 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/27 10:52:50 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,24 @@ static int	str_formater(va_list args, char c)
 {
 	int	char_num;
 
+	char_num = 0;
 	if (c == 'c')
 		char_num = ft_char_format(va_arg(args, int));
 	else if (c == 's')
 		char_num = ft_string_format(va_arg(args, char *));
 	else if (c == 'p')
 		char_num = ft_pointer_format(va_arg(args, unsigned long long));
-	else if (c == 'd')
-		char_num = ft_decimal_format(va_arg(args, int));
-	else if (c == 'i')
+	else if (c == 'd' || c == 'i')
 		char_num = ft_decimal_format(va_arg(args, int));
 	else if (c == 'u')
 		char_num = ft_unsigned_format(va_arg(args, unsigned int));
+	else if (c == 'x' || c == 'X')
+		char_num = ft_hexadecimal_format(va_arg(args, long long int), c);
+	else if (c == '%')
+	{
+		write(1, "%", 1);
+		char_num++;
+	}
 	return (char_num);
 }
 

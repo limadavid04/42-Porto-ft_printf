@@ -6,7 +6,7 @@
 /*   By: dlima <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/20 16:56:13 by dlima             #+#    #+#             */
-/*   Updated: 2022/12/23 17:07:55 by dlima            ###   ########.fr       */
+/*   Updated: 2022/12/27 14:32:17 by dlima            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_hexanumlen(unsigned long long num)
+int	ft_hexanumlen(long long int num)
 {
 	int	len;
 
