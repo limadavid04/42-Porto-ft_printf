@@ -1,5 +1,4 @@
 # # -*- Makefile -*-
-# NAME = ft_printf
 NAME= libftprintf.a
 CC= cc
 CFLAGS = -Wall -Wextra -Werror
